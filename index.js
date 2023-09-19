@@ -21,7 +21,7 @@ function background(){
 function show(){
     let fnameValue = document.querySelector('#fname').value;
     let lnameValue = document.querySelector('#lname').value;
-    document.querySelector('#result').innerHTML = lnameValue + ' ' + fnameValue;
+    document.querySelector('#result').innerHTML = fnameValue + ' ' + lnameValue;
      /**
       * Issue  2
       *
@@ -43,11 +43,12 @@ function search(){
           results = results + item.name + '<br>'  
          }
         })
-        if(document.querySelector('#name').value == ''){
+        if(document.querySelector('#name').value == ''){   //Caso queira que o campo fique vazio quando não houver nada digitado
             results = ''
         }
         document.querySelector('#search').innerHTML = results;
-
+        
+        
     /**
      * Issue 3
      *

@@ -38,9 +38,12 @@ function search(){
 
     var data = [{name: "Rodrigo"}, {name: "Ricardo"}, {name: "Fabio"}, {name: "Alex"}, {name: "Sílvia"}];
     let results = ''
+    let search = document.querySelector('#name').value.toLowerCase()
     data.map((item) => {
-        if(item.name.toLowerCase().includes(document.querySelector('#name').value.toLowerCase())){
-          results = results + item.name + '<br>'  
+        if(item.name.toLowerCase().substr(0, search.length) == search) {
+          results = results +'<div>' + item.name + '</div>'  
+          console.log(item.name.toLowerCase().substr(0, search.length))
+          console.log(search)
          }
         })
         if(document.querySelector('#name').value == ''){   //Caso queira que o campo fique vazio quando não houver nada digitado
